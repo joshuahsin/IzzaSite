@@ -24,7 +24,7 @@ const Photos = () => {
           .catch(console.error);
     }, []);
 
-    const uploadFile = async () => {
+    /*const uploadFile = async () => {
         // S3 Bucket Name
         const S3_BUCKET = "izza-images";
     
@@ -33,8 +33,8 @@ const Photos = () => {
     
         // S3 Credentials
         AWS.config.update({
-          accessKeyId: "AKIAS2VS4EM7NBY4PVOJ",
-          secretAccessKey: "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",
+          accessKeyId: "",
+          secretAccessKey: "",
         });
         const s3 = new AWS.S3({
           params: { Bucket: S3_BUCKET },
@@ -77,7 +77,7 @@ const Photos = () => {
 
           alert("File uploaded successfully.");
         }).catch((error) => {console.log(error);});
-    };
+    };*/
 
     const handleFileChange = (e) => {
         // Uploaded file
@@ -92,7 +92,6 @@ const Photos = () => {
 
     return (
         <div style={{backgroundImage: `url(${Background})`, backgroundSize: "100%", backgroundRepeat: "repeat"}}>
-            <div>
                 <ImageGallery
                     imagesInfoArray={images}
                     columnCount={"auto"}
@@ -100,20 +99,15 @@ const Photos = () => {
                     gapSize={18}
                     style={{margin:"5 px"}}
                 />
-                <center>
-                    <input type="file" onChange={handleFileChange} />
-                    <label htmlFor="name">Image Description:</label>
-                    <input type="text" onChange={handleDescriptionChange}></input>
-                    <button onClick={uploadFile}>Upload Image</button>
-                </center>
-            </div>
         </div>
     );
 }
 
-        /*{images.map(function(image){
-                    return <img key={ image.imageID } src={image.imageURL} height="500" width="280" style={{padding: '4px 4px 4px 4px'}}/>;
-            })}
-            <img src="https://izza-images.s3.us-west-1.amazonaws.com/IMG_2154.jpg" height="500" width="280" style={{padding: '4px 4px 4px 4px'}}/>*/
+/*<center>
+<input type="file" onChange={handleFileChange} />
+<label htmlFor="name">Image Description:</label>
+<input type="text" onChange={handleDescriptionChange}></input>
+<button onClick={uploadFile}>Upload Image</button>
+</center>*/
 
 export default Photos;
