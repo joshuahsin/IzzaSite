@@ -8,7 +8,7 @@ const Traits = () => {
 
     const fetchData = async () => {
         // get the data from the api
-        const data = await fetch('http://localhost:8080/app/allTraits');
+        const data = await fetch('https://izza-site-backend-797611a09f8c.herokuapp.com/app/allTraits');
         // convert data to json
         const json = await data.json();
 

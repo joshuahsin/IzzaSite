@@ -12,7 +12,7 @@ const Photos = () => {
 
     const fetchData = async () => {
         // get the data from the api
-        const data = await fetch('http://localhost:8080/app/allImages');
+        const data = await fetch('https://izza-site-backend-797611a09f8c.herokuapp.com/app/allImages');
         // convert data to json
         const json = await data.json();
 
@@ -79,7 +79,7 @@ const Photos = () => {
         }).catch((error) => {console.log(error);});
     };*/
 
-    const handleFileChange = (e) => {
+    /*const handleFileChange = (e) => {
         // Uploaded file
         const file = e.target.files[0];
         // Changing file state
@@ -88,17 +88,17 @@ const Photos = () => {
 
     const handleDescriptionChange = (e) => {
         setDescription(e.target.value);
-    }
+    }*/
 
     return (
         <div style={{backgroundImage: `url(${Background})`, backgroundSize: "100%", backgroundRepeat: "repeat"}}>
-                <ImageGallery
-                    imagesInfoArray={images}
-                    columnCount={"auto"}
-                    columnWidth={230}
-                    gapSize={18}
-                    style={{margin:"5 px"}}
-                />
+          <ImageGallery
+              imagesInfoArray={images}
+              columnCount={"auto"}
+              columnWidth={230}
+              gapSize={18}
+              style={{margin:"5 px"}}
+          />
         </div>
     );
 }
