@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import { FlashcardArray } from "react-quizlet-flashcard";
-import Background from "../images/CinnaBG.jpg";
+import Background from "../images/cloudBackground.jpg";
 
 const Traits = () => {
     const [cards, setCards] = useState([{id: 1, "frontHTML": "", "backHTML": ""}]);
@@ -21,7 +21,7 @@ const Traits = () => {
     }, []);
 
     return (
-        <div style={{backgroundImage: `url(${Background})`, backgroundSize: "cover", backgroundPosition: "center"}}>
+        <div style={{backgroundImage: `url(${Background})`, backgroundSize: "100%", backgroundRepeat: "repeat"}}>
             <center>
                 <br></br>
                 <br></br>
